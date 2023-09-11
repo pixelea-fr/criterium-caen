@@ -6,6 +6,8 @@
 // Enqueue Scripts
 add_action( 'wp_enqueue_scripts', 'criterium_scripts' );
 function criterium_scripts() {
+	wp_enqueue_script('slick-scripts', get_template_directory_uri() . '/dist/js/vendor/slick.min.js', array( 'jquery' ), false, false);
+    wp_enqueue_script('fancybox-scripts', get_template_directory_uri() . '/dist/js/vendor/fancybox.min.js', array( 'jquery' ), false, false);
 
     // If SCRIPT_DEBUG is enable, load unminified JS, if disabled load minified JS
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
@@ -13,6 +15,7 @@ function criterium_scripts() {
 	} else {
 		wp_enqueue_script('app-scripts', get_template_directory_uri() . '/dist/js/app.min.js', array( 'jquery' ), false, false);
 	}
+
 }
 
 // Enqueue Block Editor Script
