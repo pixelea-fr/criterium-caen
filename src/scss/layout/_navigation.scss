@@ -76,6 +76,7 @@
         a {
             text-decoration: none;
             color: $grey;
+            transition: all 0.5s ease-in-out;
 
             &:hover {
                 color: $d-red;
