@@ -1,9 +1,14 @@
 // Font Family
-$primary-font-family: "Libre Franklin", sans-serif;
-$secondary-font-family: "Great Vibes", handwritting;
+$primary-font-family: "Poppins", sans-serif;
+@font-face {
+    font-family: "Rubber";
+    src: url("../fonts/LLRubberGrotesque.woff") format('woff');
+  }
+
+$secondary-font-family: "Rubber", sans-serif;
 
 // Font Size
-$base-font-size: 16px;
+$base-font-size: 14px;
 
 // Line Height
 $base-line-height: 1.4;

@@ -72,3 +72,53 @@ function criterium_new_wp_login_url() {
 	return home_url();
 }
 add_filter('login_headerurl', 'criterium_new_wp_login_url');
+
+
+function format_value($value)
+{
+    // Remplace les caractères accentués par les lettres non accentuées
+    $value = Normalizer::normalize($value, Normalizer::FORM_D);
+    $value = preg_replace('/\p{M}/u', '', $value);
+
+    // Remplace les espaces par des traits de soulignement
+    $formatted_value = strtolower(str_replace(' ', '_', $value));
+
+    return $formatted_value;
+}
+/**
+ * Add custom logo for admin login screen and link to homepage
+ */
+function hatsumei_filter_login_head()
+{
+
+	if (has_custom_logo()) {
+		$image = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full');
+?>
+		<style type="text/css">
+			#login {
+				display: flex;
+				flex-direction: column;
+			}
+
+			#login h1,
+			#login h1 a {
+				height: 80px;
+				width: 100%;
+			}
+
+			.login h1 a {
+				background-image: url(<?php echo esc_url($image[0]); ?>);
+				-webkit-background-size: contain;
+				background-size: contain;
+			}
+		</style>
+<?php
+	}
+}
+add_action('login_head', 'hatsumei_filter_login_head', 100);
+
+function hatsumei_new_wp_login_url()
+{
+	return home_url();
+}
+add_filter('login_headerurl', 'hatsumei_new_wp_login_url');

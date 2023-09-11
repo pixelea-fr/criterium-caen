@@ -34,10 +34,7 @@
 		<header id="masthead" class="header" role="banner">
 			<div class="container">
 				<div class="site-branding">
-					<a href="<?php echo home_url(); ?>">
-						<svg class="menu-logo">
-							<use xlink:href="#aptima-rh" />
-						</svg></a>
+					<?php the_custom_logo(); ?>
 				</div><!-- .site-branding -->
 
 				<?php get_template_part( 'template-parts/navigation/primary' ); ?>
