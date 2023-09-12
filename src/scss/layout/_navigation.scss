@@ -1,3 +1,49 @@
+.go-down {
+    display: none;
+
+    @include breakpoints(xxsm) {
+        position: fixed;
+        bottom: 5%;
+        left: 5%;
+        width: 80px;
+        height: 110px;
+        background-image: url('../../dist/image/down.svg');
+        z-index: 100;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 1s ease-in-out;
+
+        &:hover {
+            rotate: -5deg;
+            cursor: pointer;
+
+            &::after {
+                rotate: 5deg;
+                filter: brightness(0.6);
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 70px;
+            background-image: url('../../dist/image/arrowdown.svg');
+            z-index: 100;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all 1s ease-in-out;
+
+        }
+    }
+
+}
+
 // Hamburger menu
 .menu-toggle {
     display: flex;
@@ -73,6 +119,7 @@
         list-style: none;
         padding: 0;
         width: fit-content;
+
         a {
             text-decoration: none;
             color: $grey;

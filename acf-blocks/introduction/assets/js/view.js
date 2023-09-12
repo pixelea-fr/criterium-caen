@@ -6,8 +6,8 @@
 		$('.slider').slick({
 			infinite: true,
 			dots: true,
-			autoplay: false,
-			speed: 1500,
+			autoplay: true,
+			autoplaySpeed: 3500,
 			fade: true,
 			cssEase: 'linear',
 			appendArrows: $('.slick-slider-nav'),

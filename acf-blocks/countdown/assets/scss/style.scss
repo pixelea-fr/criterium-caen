@@ -2,24 +2,15 @@
 
 // Call all variables 
 .introduction {
-    height: calc(50vh - 50px);
+    height: calc(100vh - 50px);
     display: flex;
     align-items: center;
 
-    @include breakpoints(xsm) {
-        height: calc(100vh - 50px);
-    }
-
-    .content {
-        position: relative;
-    }
-
     .logo {
-        h1 {
+        h1{
             position: absolute;
             z-index: -1;
         }
-
         position: relative;
         display: flex;
         align-items: center;
@@ -60,23 +51,18 @@
         display: flex;
         overflow: hidden;
 
-        .slick-track {
-            height: 100%;
-        }
-
         figure {
-            height: 100%;
+            height: calc(100vh - 50px);
             margin: 0;
-            display: flex;
-            align-items: flex-end;
-            flex-direction: column;
 
             img {
-                max-height: 100%;
-                width: 100%;
-                object-fit: cover;
+                height: 100%;
+                width: auto;
             }
         }
+
+
+
     }
 
     .navigation-slider {
