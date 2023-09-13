@@ -8,7 +8,7 @@
 
 
     $(window).scroll(function () {
-        console.log($(window).scrollTop());
+        // console.log($(window).scrollTop());
         // Vérifie si le scroll dépasse 50vh
         if ($(this).scrollTop() > 0.5 * $(window).height()) {
             $(".go-down").css("bottom", "-100%");

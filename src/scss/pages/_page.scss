@@ -1,8 +1,14 @@
 .content {
-    max-width: calc(100vw - 9.375%);
+    max-width: calc(100vw - 9.375vw);
     display: flex;
     width: 100%;
     margin: auto;
+    justify-content: center;
+
+    @include breakpoints(sm) {
+        max-width: calc(100vw - 20.375vw);
+
+    }
 
     &.out {
         max-width: 100%;
