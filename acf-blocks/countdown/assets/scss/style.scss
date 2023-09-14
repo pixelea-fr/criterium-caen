@@ -12,13 +12,23 @@
                 margin: 0;
                 grid-row: 1;
                 grid-column: 1;
-                width: 100%;
                 position: relative;
                 z-index: -1;
+                width: 100%;
+                height: auto;
+
 
                 img {
                     width: 100%;
-                    height: auto;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: top center;
+                    position: relative;
+
+                    @include breakpoints(md) {
+                        width: 100%;
+                        height: auto;
+                    }
                 }
 
                 &::after {
@@ -49,7 +59,6 @@
                     color: $white;
                     text-transform: uppercase;
                     padding: 5% 15%;
-                    max-width: 80%;
                     margin: 0;
 
                     span {

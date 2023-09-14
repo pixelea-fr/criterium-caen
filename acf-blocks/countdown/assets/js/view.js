@@ -5,7 +5,7 @@
 	$(window).load(function () {
 		// Récupérez la date PHP
 		var datePHP = date;
-		console.log(date);
+		// console.log(date);
 		// Créez une nouvelle date JavaScript
 		function parseDate(dateStr) {
 			// Tableau des mois en français
