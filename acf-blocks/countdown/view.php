@@ -6,7 +6,8 @@
         var date = <?php echo json_encode($date); ?>;
     </script>
     <?php
-    $positionDebut = strlen($date) - 12; // Calcul de la position de début
+
+    $positionDebut = strlen($date) - 10; // Calcul de la position de début
     $annee = substr($date, $positionDebut, 4); // Extraire 4 caractères
     ?>
 
@@ -14,7 +15,7 @@
         <div class="content">
             <div class="grid">
                 <div class="text">
-                    <h2>Le <?php echo substr($date, 0, -13); ?><br />
+                    <h2>Le <?php echo substr($date, 0, -11); ?><br />
                         <span><?php echo $annee; ?></span>
                     </h2>
                     <div id="countdown">
