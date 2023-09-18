@@ -1,163 +1,88 @@
 @import '../../../../src/scss/abstracts/all.scss';
 
 // Call all variables 
-.introduction {
-    height: calc(50vh - 50px);
-    display: flex;
-    align-items: center;
-
-    @include breakpoints(xsm) {
-        height: calc(100vh - 50px);
-    }
-
+.sponsor {
     .content {
-        position: relative;
-    }
-
-    .logo {
-        h1 {
-            position: absolute;
-            z-index: -1;
-        }
-
+        background-image: url('../../../../dist/image/back-upp.svg');
         position: relative;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        z-index: 20;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        gap: 5%;
+        padding: 5vh 0;
+        max-height: 500px;
 
-        &::after,
-        &::before {
-            content: '';
-            position: absolute;
-            left: -15vw;
-            aspect-ratio: 1/1;
-            width: 50vw;
-            display: flex;
+        @include breakpoints(xsm) {
+            padding: 10vh 0;
             background-size: contain;
-            background-repeat: no-repeat;
-            z-index: -1;
-        }
+            flex-direction: row;
 
-        &::after {
-            background-image: url('../../../../dist/image/R-back.svg');
-            animation: rotate-reverse 5s ease-in-out infinite;
-        }
-
-        &::before {
-            background-image: url('../../../../dist/image/B-back.svg');
-            animation: rotate 6s ease-in-out infinite;
-            left: -10vw;
-        }
-
-        img {
-            width: 25vw;
-            height: auto;
-            margin-left: 4vw;
-        }
-    }
-
-    .slider {
-        display: flex;
-        overflow: hidden;
-
-        .slick-track {
-            height: 100%;
         }
 
         figure {
-            height: 100%;
             margin: 0;
+        }
+
+        .logo-spon {
+            img {
+                width: 14vw;
+                min-width: 150px;
+                height: auto;
+            }
+        }
+
+        .texte {
             display: flex;
-            align-items: flex-end;
             flex-direction: column;
+            padding: 5%;
+
+            p {
+                font-family: $secondary-font-family;
+                color: $beige;
+                font-size: 20px;
+
+                @include breakpoints(xsm) {
+                    font-size: 30px;
+                }
+
+                @include breakpoints(md) {
+                    font-size: 45px;
+                }
+
+                &:first-of-type {
+                    font-size: 30px;
+
+                    @include breakpoints(xsm) {
+                        font-size: 40px;
+                    }
+
+                    @include breakpoints(md) {
+                        font-size: 65px;
+                    }
+                }
+            }
+        }
+
+
+        .ffc {
+            width: 14vw;
+            min-width: 150px;
+            bottom: 10%;
+            right: 10%;
+
+            @include breakpoints(xsm) {
+                position: absolute;
+
+            }
 
             img {
-                max-height: 100%;
                 width: 100%;
-                object-fit: cover;
+                height: auto;
             }
         }
     }
-
-    .navigation-slider {
-        position: absolute;
-        right: 4vw;
-        bottom: 20px;
-        display: grid;
-
-
-        .slick-slider-nav {
-            grid-row: 1;
-            grid-column: 1;
-            display: flex;
-            width: 180px;
-            justify-content: space-between;
-
-            .arrow {
-                font-family: $secondary-font-family;
-                font-size: 80px;
-                color: $white;
-                cursor: pointer;
-                line-height: 50px;
-
-                &:hover {
-                    color: $l-red;
-                }
-            }
-        }
-
-        .slick-slider-dots {
-            grid-row: 1;
-            grid-column: 1;
-            display: flex;
-            margin: auto;
-
-            ul {
-                display: flex;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                align-items: center;
-                gap: 5px;
-
-                li {
-
-                    button {
-                        cursor: pointer;
-                        padding: 0;
-                        background: $white;
-                        height: 20px;
-                        width: 20px;
-                        align-items: center;
-                        overflow: hidden;
-                        color: transparent;
-                        border: none;
-                        border-radius: 100%;
-                        justify-content: center;
-                        display: flex;
-
-                        &:hover {
-                            background-color: $l-red;
-                        }
-                    }
-
-                    &.slick-active {
-                        button {
-                            &::after {
-                                position: absolute;
-                                content: '';
-                                display: block;
-                                width: 10px;
-                                height: 10px;
-                                border-radius: 100%;
-                                background-color: $d-red;
-                            }
-                        }
-                    }
-                }
-            }
-
-        }
-    }
-
 }
