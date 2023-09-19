@@ -16,7 +16,7 @@ const { src, dest, series, watch, parallel } = require('gulp'),
   yargs = require("yargs"),
   path = require("path");
 
-const PRODUCTION = yargs.argv.prod;  
+const PRODUCTION = yargs.argv.prod;
 const server = browserSync.create();
 const url = 'http://critrium-caen.local/';
 const paths = {
@@ -50,7 +50,7 @@ function styles() {
     .pipe(plumber())
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer("last 2 version"), cssnano({ zindex: false, reduceIdents: false }) ]))
+    .pipe(postcss([autoprefixer("last 2 version"), cssnano({ zindex: false, reduceIdents: false })]))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write('./')))
     .pipe(gulpif(PRODUCTION, rename("main.min.css")))
     .pipe(dest(paths.styles.dest))
@@ -61,7 +61,7 @@ function blockStyles() {
   return src(paths.blockStyles.src)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer("last 2 version"), cssnano({ zindex: false }) ]))
+    .pipe(postcss([autoprefixer("last 2 version"), cssnano({ zindex: false, reduceIdents: false })]))
     .pipe(rename(function (file) {
       file.dirname = file.dirname.replace('scss', 'css');
     }))
@@ -72,49 +72,49 @@ function blockStyles() {
 /* SCRIPTS */
 function scripts() {
   return src(paths.scripts.src)
-  .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-  .pipe(concat("app.js"))
-  .pipe(gulpif(PRODUCTION, uglify()))
-  .pipe(gulpif(PRODUCTION, rename("app.min.js")))
-  .pipe(gulpif(!PRODUCTION, sourcemaps.write('./')))
-  .pipe(dest(paths.scripts.dest))
-  .pipe(server.stream());
+    .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+    .pipe(concat("app.js"))
+    .pipe(gulpif(PRODUCTION, uglify()))
+    .pipe(gulpif(PRODUCTION, rename("app.min.js")))
+    .pipe(gulpif(!PRODUCTION, sourcemaps.write('./')))
+    .pipe(dest(paths.scripts.dest))
+    .pipe(server.stream());
 }
 
 /* IMAGES */
 function images() {
   return src(paths.img.src)
-  .pipe(imagemin())
-	.pipe(dest(paths.img.dest));
+    .pipe(imagemin())
+    .pipe(dest(paths.img.dest));
 }
 
 /* SVG */
 function svg() {
   return src(paths.svg.src)
-  .pipe(imagemin())
-  .pipe(
-    svgSymbols({
-      templates: ["default-svg"],
-      svgAttrs: {
-        width: 0,
-        height: 0,
-        display: "none"
-      }
-    })
-  )
-  .pipe(rename("sprite.svg.php"))
-  .pipe(dest(paths.svg.dest));
+    .pipe(imagemin())
+    .pipe(
+      svgSymbols({
+        templates: ["default-svg"],
+        svgAttrs: {
+          width: 0,
+          height: 0,
+          display: "none"
+        }
+      })
+    )
+    .pipe(rename("sprite.svg.php"))
+    .pipe(dest(paths.svg.dest));
 }
 
 /* COPY */
 export const copy = () => {
-  return src(['./src/**/*','!./src/{images,js,scss,svg-sprite}','!./src/{images,js,scss,svg-sprite}/**/*'])
+  return src(['./src/**/*', '!./src/{images,js,scss,svg-sprite}', '!./src/{images,js,scss,svg-sprite}/**/*'])
     .pipe(dest('./dist'));
 }
 
 export const copyVendor = () => {
   return src('./src/js/vendor/*')
-  .pipe(dest('./dist/js/vendor'))
+    .pipe(dest('./dist/js/vendor'))
 }
 
 /* CLEAN */
@@ -122,7 +122,7 @@ export const clean = () => {
   return del(['./dist/']);
 }
 
-/* TASKS */ 
+/* TASKS */
 function reload(done) {
   server.reload();
   done();
@@ -144,7 +144,7 @@ function watchForChanges() {
   watch(paths.svg.src, series(svg, reload));
   watch(paths.img.src, series(images, reload));
   watch(paths.blockStyles.src, blockStyles);
-  watch(['./src/**/*','!./src/{img,js,scss}','!./src/{img,js,scss}/**/*','./acf-blocks/**/*'], series(copy, reload));
+  watch(['./src/**/*', '!./src/{img,js,scss}', '!./src/{img,js,scss}/**/*', './acf-blocks/**/*'], series(copy, reload));
   watch('./src/js/vendor/*', series(copyVendor, reload));
   watch('./theme.json', reload);
 }

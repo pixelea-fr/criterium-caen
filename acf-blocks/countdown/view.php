@@ -41,5 +41,5 @@
                 </figure>
             </div>
         </div>
-        <a class="button grey" src="/programme" aria-label="Le Programme" alt="Le Programme">Voir le programme</a>
+        <a class="button grey" href="/programme" aria-label="Le Programme" alt="Le Programme">Voir le programme</a>
     </section>

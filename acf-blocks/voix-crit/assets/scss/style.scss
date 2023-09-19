@@ -1,0 +1,134 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.voix {
+    overflow: visible;
+
+    .content {
+        justify-content: center;
+        gap: 10vw;
+        align-items: center;
+        flex-direction: column;
+
+        @include breakpoints(md) {
+            flex-direction: row;
+        }
+
+        .image {
+            width: auto;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            position: relative;
+
+
+            figure {
+                grid-row: 1;
+                grid-column: 1;
+                margin: 0;
+                width: 200px;
+                height: 200px;
+
+                @include breakpoints(md) {
+                    width: 300px;
+                    height: 300px;
+                }
+
+
+                img {
+                    border-radius: 100%;
+                    width: 100%;
+                    height: 100%;
+                    border: 6px solid $white;
+                    object-fit: cover;
+                    background-color: $white;
+                }
+            }
+
+            #container {
+                position: relative;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+
+                @include breakpoints(md) {
+                    width: 300px;
+                    height: 300px;
+                }
+
+                grid-row: 1;
+                grid-column: 1;
+                animation: rotate 4s infinite ease-in-out alternate;
+                z-index: -1;
+
+
+                .bar {
+                    position: absolute;
+                    z-index: -1;
+
+                    background-color: $l-red;
+
+                    &:nth-child(2n) {
+                        background-color: $d-red;
+                    }
+
+                    @include breakpoints(md) {
+                        $w: 170px;
+                    }
+
+                    $w: 70px;
+
+
+                    $circle-count: 12;
+                    $translateX-value: 150px;
+
+                    @for $i from 1 through $circle-count {
+                        &:nth-child(#{$i}) {
+                            $h : #{randomNum(10, 20)}px;
+                            $w: 120px;
+                            top: calc(50% - calc($h/2)); //height
+                            left: calc(50% - calc($w/2)); //width
+                            height: $h;
+                            width: $w;
+
+                            @include breakpoints(md) {
+                                $w: 170px;
+                                width: $w;
+                                left: calc(50% - calc($w/2)); //width
+
+                            }
+
+                            $random: random(45);
+                            $circle-offset: calc(calc(360deg / $circle-count));
+                            rotate: (($i - 1) * $circle-offset + $random);
+                            transform: translateX(#{$translateX-value});
+                            animation: augment random(5)+s infinite ease-in-out alternate;
+                        }
+                    }
+                }
+            }
+        }
+
+        .text {
+            width: auto;
+
+            h2 {
+                margin: 0;
+                font-size: 40px;
+                @include breakpoints(lg){
+                    font-size: 70px;
+                }
+            }
+
+            .nom {
+                background-image: url('../../../../dist/image/speack.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                text-align: center;
+                color: $white;
+                width: 43vw;
+            }
+        }
+    }
+}

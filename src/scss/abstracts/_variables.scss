@@ -1,19 +1,37 @@
 $border-radius: rem(30);
 
 
-@keyframes rotate{
-    0%, 100%{
+@keyframes rotate {
+
+    0%,
+    100% {
         rotate: 0deg;
     }
-    50%{
+
+    50% {
         rotate: 5deg;
     }
 }
-@keyframes rotate-reverse{
-    0%, 100%{
+
+@keyframes rotate-reverse {
+
+    0%,
+    100% {
         rotate: 0deg;
     }
-    50%{
+
+    50% {
         rotate: -8deg;
+    }
+}
+
+@keyframes augment {
+    0% {
+        transform: translateX(100%);
+
+    }
+
+    100% {
+        transform: translateX(50%);
     }
 }

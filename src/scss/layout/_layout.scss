@@ -13,11 +13,14 @@ body {
         opacity: 0.3;
         background-image: url('../../dist/image/background.svg');
         background-repeat: repeat-y;
-        background-size: 80% 100%;
+        background-size: contain;
         z-index: -1;
     }
 }
 
 section {
     margin-bottom: 10vh;
+    @include breakpoints(md,max){
+        overflow: hidden;
+    }
 }
