@@ -1,0 +1,88 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables
+
+.slider-video {
+    .content {
+        flex-direction: column;
+
+        .slider-soutient {
+            background-image: url('../../../../dist/image/backsout.svg');
+
+            @include breakpoints(md) {
+                padding: 5vh 20%;
+            }
+
+            background-size: 90% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100%;
+
+            .item {
+                @include breakpoints(md) {
+                    display: grid;
+                    grid-template-columns: 40% 50%;
+                    &:hover {
+                        .media {
+                            rotate: -5deg;
+                        }
+                    }
+                }
+
+                margin: 5vh;
+                max-width: 100%;
+                min-height: 400px;
+                align-items: center;
+                gap: 10%;
+                justify-items: center;
+                align-content: center;
+                justify-content: center;
+                display: grid;
+                grid-template-columns: 100%;
+
+
+
+                .media {
+                    width: 100%;
+                    aspect-ratio: 1/1.6;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.5s ease-in-out;
+
+                    figure {
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 30px;
+                        overflow: hidden;
+                        position: relative;
+
+                        video,
+                        img {
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .text {
+
+                    h4 {
+                        margin-left: 5%;
+                    }
+
+                    .quote {
+                        background-image: url('../../../../dist/image/textsout.svg');
+                        background-size: 100% 100%;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        padding: 5%;
+                    }
+                }
+            }
+        }
+    }
+}

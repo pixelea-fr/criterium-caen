@@ -4,20 +4,20 @@ body {
     line-height: $base-line-height;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3
+    h4,
+    .h4 {
+        font-family: $secondary-font-family;
+        font-weight: 500;
+        text-align: center;
+    }
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3
-h4,
-.h4 {
-    font-family: $secondary-font-family;
-    font-weight: 500;
-    text-align: center;
-}
 
 h2, .h2{
     font-size: 40px;
@@ -32,6 +32,16 @@ h3{
     margin: 0;
     font-size: 20px;
     text-transform: uppercase;
+}
+h4{
+    font-size: 40px;
+    font-family: $secondary-font-family;
+    font-weight: 500;
+    color: $grey;
+    margin: 0;
+    @include breakpoints(md){
+        font-size: 80px;
+    }
 }
 strong{
     color: $d-red;
