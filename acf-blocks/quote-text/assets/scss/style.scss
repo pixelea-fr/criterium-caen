@@ -1,0 +1,82 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.quote-text {
+    background-image: url('../../../../dist/image/back-press.svg');
+    background-size: 100% 100%;
+    padding: 15vh 0;
+
+    @include breakpoints(md) {
+        padding: 5vh 0;
+
+    }
+
+    .content {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 80px;
+            background-image: url('../../../../dist/image/quote-in.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: -5%;
+            left: -5%;
+            transform-origin: center center;
+            animation: rotate-reverse 5s alternate ease-in-out infinite;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 80px;
+            background-image: url('../../../../dist/image/quote-out.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            bottom: -5%;
+            right: -5%;
+            transform-origin: center center;
+            animation: rotate 5s alternate ease-in-out infinite;
+        }
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 30px;
+        flex-direction: column;
+
+        @include breakpoints(md) {
+            flex-direction: row;
+        }
+
+        .text {
+            width: 100%;
+            color: $beige;
+            margin-top: 30px;
+
+            p {
+                margin-bottom: 5px;
+            }
+
+            h2 {
+                text-align: left;
+                margin: 0;
+                color: $beige;
+            }
+        }
+
+        figure {
+            margin: 0;
+            width: 30%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
