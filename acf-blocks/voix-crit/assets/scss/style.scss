@@ -127,7 +127,11 @@
                 background-position: center center;
                 text-align: center;
                 color: $white;
-                width: 43vw;
+                width: 100%;
+                @include breakpoints(md){
+
+                    width: 43vw;
+                }
             }
         }
     }

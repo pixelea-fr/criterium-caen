@@ -16,6 +16,7 @@
 
         &::after {
             content: '';
+            font-family: $secondary-font-family;
             position: absolute;
             width: 70px;
             height: 80px;
@@ -30,6 +31,7 @@
 
         &::before {
             content: '';
+            font-family: $secondary-font-family;
             position: absolute;
             width: 70px;
             height: 80px;

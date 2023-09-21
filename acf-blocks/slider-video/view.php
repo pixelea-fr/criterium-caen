@@ -12,7 +12,7 @@
                             <figure>
                                 <?php if ($video_photo) : ?>
                                     <!-- Vidéo -->
-                                    <video class="video" muted autoplay title="<?php echo $nom; ?>" frameborder="0" loop>
+                                    <video class="video" muted controls autoplay title="<?php echo $nom; ?>" frameborder="0" loop>
                                         <source src="<?php echo $video ?>" type="video/mp4">
                                     </video>
                                 <?php else : ?>
@@ -28,5 +28,7 @@
                     </div>
                 <?php endforeach ?>
             </div>
+            <div class="slick-slider-soutient-dots" ></div>
+            <!-- <div class="slick-slider-soutient-nav" ></div> -->
         </div>
     </section>

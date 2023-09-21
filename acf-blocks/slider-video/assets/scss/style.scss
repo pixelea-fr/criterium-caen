@@ -5,31 +5,48 @@
 .slider-video {
     .content {
         flex-direction: column;
+        position: relative;
 
         .slider-soutient {
-            background-image: url('../../../../dist/image/backsout.svg');
-
             @include breakpoints(md) {
-                padding: 5vh 20%;
+                padding: 5vh 10%;
+                max-height: 50vw;
+                display: flex;
+                align-items: center;
             }
 
+            background-image: url('../../../../dist/image/backsout.svg');
             background-size: 90% 100%;
             background-position: center center;
             background-repeat: no-repeat;
             width: 100%;
+            position: relative;
+            z-index: 2;
 
             .item {
                 @include breakpoints(md) {
                     display: grid;
                     grid-template-columns: 40% 50%;
+                    margin: 10vh;
+
                     &:hover {
                         .media {
                             rotate: -5deg;
+
+                            &::after {
+                                top: -10%;
+                                left: -10%;
+                            }
+
+                            &::before {
+                                bottom: -10%;
+                                right: -10%;
+                            }
                         }
                     }
                 }
 
-                margin: 5vh;
+                margin: 10vh 5vh;
                 max-width: 100%;
                 min-height: 400px;
                 align-items: center;
@@ -40,15 +57,50 @@
                 display: grid;
                 grid-template-columns: 100%;
 
-
-
                 .media {
-                    width: 100%;
+                    width: 60%;
+
+                    @include breakpoints(md) {
+                        width: 100%;
+                    }
+
                     aspect-ratio: 1/1.6;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     transition: all 0.5s ease-in-out;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        transition: all 0.5s ease-in-out;
+                        position: absolute;
+                        width: 25%;
+                        height: 20%;
+                        background-image: url('../../../../dist/image/glitchtop.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        top: -5%;
+                        left: -5%;
+                        transform-origin: center center;
+                        animation: rotate-reverse 5s alternate ease-in-out infinite;
+                    }
+
+                    &::before {
+                        content: '';
+                        transition: all 0.5s ease-in-out;
+                        position: absolute;
+                        width: 25%;
+                        height: 17%;
+                        background-image: url('../../../../dist/image/glitchbot.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        bottom: -5%;
+                        right: -5%;
+                        transform-origin: center center;
+                        animation: rotate 5s alternate ease-in-out infinite;
+                        z-index: 2;
+                    }
 
                     figure {
                         margin: 0;
@@ -71,7 +123,12 @@
                 .text {
 
                     h4 {
-                        margin-left: 5%;
+                        text-align: center;
+
+                        @include breakpoints(md) {
+                            text-align: left;
+                            margin-left: 5%;
+                        }
                     }
 
                     .quote {
@@ -79,10 +136,82 @@
                         background-size: 100% 100%;
                         background-position: center center;
                         background-repeat: no-repeat;
-                        padding: 5%;
+                        padding: 10% 5%;
+                        position: relative;
+                        max-width: 80%;
+                        margin: auto;
+
+                        @include breakpoints(md) {
+                            padding: 5%;
+                            max-width: 100%;
+
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 15%;
+                            aspect-ratio: 1/1.2;
+                            background-image: url('../../../../dist/image/quote-in.svg');
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            top: 0%;
+                            left: 0%;
+                            transform-origin: center center;
+                            transform: translate(-50%, -50%);
+                            animation: rotate-reverse 5s alternate ease-in-out infinite;
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 15%;
+                            aspect-ratio: 1/1.2;
+                            background-image: url('../../../../dist/image/quote-out.svg');
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            bottom: 0%;
+                            right: 0%;
+                            transform-origin: center center;
+                            transform: translate(50%, 50%);
+                            animation: rotate 5s alternate ease-in-out infinite;
+                        }
                     }
                 }
             }
         }
+
+        .slick-slider-soutient {
+            &-dots {
+                position: absolute;
+                left: 50%;
+                bottom: 20px;
+                translate: -50%;
+                z-index: 3;
+
+                @include breakpoints(md) {
+                    bottom: 5%;
+                }
+            }
+
+            // &-nav {
+            //     position: absolute;
+            //     width: 100%;
+            //     top: 50%;
+            //     display: flex;
+            //     justify-content: space-between;
+            //     z-index: 1;
+
+            //     .arrow {
+            //         color: $d-red;
+            //         margin: 10px;
+
+            //         @include breakpoints(md) {
+            //             margin: 5%;
+            //         }
+            //     }
+            // }
+        }
+
     }
 }

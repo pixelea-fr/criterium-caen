@@ -2,13 +2,13 @@
 	$(document).ready(function($) {
 		$('.slider-soutient').slick({
 			infinite: true,
-			// dots: true,
+			dots: true,
 			arrows: false,
 			autoplay: true,
 			autoplaySpeed: 6500,
 			cssEase: 'ease-in-out',
+			appendDots: $('.slick-slider-soutient-dots'),
 			// appendArrows: $('.slick-slider-soutient-nav'),
-			// appendDots: $('.slick-slider-soutient-dots'),
 			// prevArrow: "<span class='arrow prev'><</span>",
 			// nextArrow: "<span class='arrow next'>></span>",
 		});
