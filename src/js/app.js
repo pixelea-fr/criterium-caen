@@ -16,6 +16,12 @@
             // Rétablit la propriété CSS "bottom" du bloc ".godown"
             $(".go-down").css("bottom", "5%");
         }
+        if ($(this).scrollTop() > 1 * $(window).height()) {
+            $(".back-top").css("bottom", "5%");
+        } 
+        else {
+            $(".back-top").css("bottom", "-100%");
+        }
     });
     $('document').ready(function () {
         $(".go-down").click(function () {

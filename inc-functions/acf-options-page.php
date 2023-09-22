@@ -143,7 +143,7 @@ if( function_exists('acf_add_local_field_group') ):
                     array(
                         'key' => 'field_641d7122d1d64',
                         'label' => 'E-mail de contact',
-                        'name' => 'e-mail',
+                        'name' => 'e_mail',
                         'aria-label' => '',
                         'type' => 'email',
                         'instructions' => '',

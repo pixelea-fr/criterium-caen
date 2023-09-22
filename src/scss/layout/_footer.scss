@@ -1,0 +1,154 @@
+.back-top {
+    rotate: 180deg;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 80px;
+    height: 110px;
+    background-image: url('../../dist/image/down.svg');
+    z-index: 100;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+
+        &::after {
+            filter: brightness(0.6);
+        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 70px;
+        background-image: url('../../dist/image/arrowdown.svg');
+        z-index: 100;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: all 1s ease-in-out;
+
+    }
+
+}
+
+footer {
+    background-image: url('../../dist/image/backfooter.svg');
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    figure {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .contentfooter {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 40vw 40vw;
+        justify-content: center;
+        padding: 20vw 2vw 0;
+        grid-template-rows: auto;
+        gap: 5vw;
+
+        .logo {
+            grid-column: 1;
+        }
+
+        .contact {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            width: 100%;
+            color: $white;
+            font-family: $primary-font-family;
+
+            span {
+                font-size: 30px;
+            }
+
+            strong {
+                color: $white;
+                font-weight: 700;
+            }
+
+            a {
+                color: $white;
+            }
+        }
+
+        .support {
+            grid-column: 1;
+
+            .texte {
+                font-family: $secondary-font-family;
+                color: $beige;
+                text-align: center;
+            }
+
+            img {
+                max-width: 50%;
+                height: auto;
+            }
+        }
+
+        .partenaires {
+
+            grid-column: 2;
+
+            img {
+                max-width: 70%;
+            }
+        }
+
+        @include breakpoints(md) {
+            grid-template-columns: 4.69VW 13.02VW 13.15VW 22.15VW 13.15VW 16.15VW 13.02VW 4.69VW;
+            padding: 0 2vw 0;
+
+            gap: 0;
+
+            .logo {
+                grid-column: 2;
+            }
+
+            .contact {
+                grid-column: 4;
+            }
+
+            .support {
+                grid-column: 6;
+
+                img {
+                    max-width: 70%;
+                }
+            }
+
+            .partenaires {
+                grid-column: 7;
+            }
+        }
+    }
+
+    .bottom-bar {
+        display: flex;
+        margin: auto;
+    }
+}
