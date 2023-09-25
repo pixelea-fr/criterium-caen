@@ -3,6 +3,68 @@
 // Call all variables 
 .timeline {
     .content {
-
+        flex-direction: column;
+        gap: 5vh;
+        .item{
+            display: grid;
+            max-width: 100%;
+            grid-template-columns: 60% 10% 30%;
+            align-items: center;
+            @include breakpoints(sm, max){
+                grid-template-columns: 100%;
+                gap: 5vh;
+            }
+            .text{
+                display: grid;
+                color: $grey;
+                grid-template-columns: 10% 90%;
+                h3{
+                    grid-column: 1;
+                    grid-column-end: 3;
+                    grid-row: 1;
+                    text-align: left;
+                    font-size: 80px;
+                    padding-bottom: 40px;
+                    position: relative;
+                    color: $grey;
+                    @include breakpoints(sm, max){
+                        font-size: 30px;
+                    }
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 50%;
+                        background-image: url('../../../../dist/image/dash.svg');
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        height: 20px;
+                        bottom: 20px;
+                        left: 0;
+                    }
+                }
+                .sous-titre{
+                    grid-column: 2;
+                    grid-row: 2;
+                    font-weight: 600;
+                    font-size: 25px;
+                    padding-bottom: 1vh;
+                }
+                span{
+                    grid-column: 2;
+                    grid-row: 3;
+                }
+            }
+            figure{
+                margin: 0;
+                grid-column: 3;
+                @include breakpoints(sm, max){
+                    grid-column: 1;
+                }
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
     }
 }
