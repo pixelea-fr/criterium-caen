@@ -1,0 +1,67 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.trombinoscope {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            margin: 0;
+        }
+        .intro{
+            text-align: center;
+            font-weight: 400;
+            max-width: 70%;
+            margin-bottom: 50px;
+            color: $grey;
+        }
+        .list {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 5%;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                max-width: 20%;
+                @include breakpoints(sm, max){
+                    max-width: 40%;
+                }
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    transition: all 0.5s ease-in-out;
+                    z-index: 1;
+                }
+                .prenom{
+                    margin-top: 20px;
+                    z-index: 2;
+                    position: relative;
+                    font-size: 1.5em;
+                    color: $grey;
+                    font-weight: 400;
+                }
+                .nom{
+                    text-transform: uppercase;
+                    font-size: 1.5em;
+                    color: $grey;
+                    font-weight: 400;
+                }
+                .role{
+                    font-size: 1em;
+                    color: $grey;
+                    font-weight: 400;
+                }
+                &:hover{
+                    img{
+                        rotate: -5deg;
+                    }
+                }
+            }
+        }
+    }
+}
