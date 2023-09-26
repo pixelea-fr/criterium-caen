@@ -12,7 +12,7 @@
                             <figure>
                                 <?php if ($video_photo) : ?>
                                     <!-- Vidéo -->
-                                    <video class="video" muted autoplay playsinline title="<?php echo $nom; ?>" frameborder="0" loop>
+                                    <video class="video" muted playsinline title="<?php echo $nom; ?>" frameborder="0">
                                         <source src="<?php echo $video ?>" type="video/mp4">
                                     </video>
                                 <?php else : ?>
