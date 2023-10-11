@@ -2,14 +2,15 @@
  * Block Styles
  */
 
-/* 
+
 // Register
 wp.blocks.registerBlockStyle('core/button', {
-    name: 'secondary-cta',
-    label: 'Secondary CTA',
+    name: 'black-large-cta',
+    label: 'Black large',
     isDefault: false
 });
 
+/*
 // Unregister
 wp.domReady( () => {
     wp.blocks.unregisterBlockStyle('core/button', 'default');

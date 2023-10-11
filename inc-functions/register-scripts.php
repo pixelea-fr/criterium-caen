@@ -21,5 +21,5 @@ function criterium_scripts() {
 // Enqueue Block Editor Script
 add_action('enqueue_block_editor_assets', 'criterium_block_enqueues');
 function criterium_block_enqueues() {
-    wp_enqueue_script('pix-editor-scripts', get_template_directory_uri() . '/editor.js', array('wp-edit-post', 'wp-blocks', 'wp-dom-ready'), '', true);
+    wp_enqueue_script('pix-editor-scripts', get_template_directory_uri() . '/editor.js', array('wp-blocks', 'wp-dom-ready'), wp_get_theme()->get( 'Version' ), false );
 }

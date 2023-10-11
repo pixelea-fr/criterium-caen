@@ -1,0 +1,173 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.programme_bref {
+    .bref {
+        position: relative;
+        text-align: center;
+        display: flex;
+        margin: auto;
+        width: fit-content;
+        margin-bottom: 50px;
+
+        &::after {
+            content: 'en bref';
+            text-transform: uppercase;
+            color: $d-red;
+            position: absolute;
+            font-size: 40px;
+            rotate: -8deg;
+            bottom: -30px;
+            right: -70px;
+        }
+    }
+
+    .content {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoints(md) {
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+
+        figure {
+            margin: 0;
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            align-items: center;
+            padding: 5% 0;
+
+            &::after {
+                content: '';
+                background-image: url('../../../../dist/image/img-back.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 120%;
+                aspect-ratio: 2/1.1;
+                z-index: -1;
+                grid-column: 1;
+            }
+
+            img {
+                height: auto;
+                width: 100%;
+                aspect-ratio: 2/1;
+                object-fit: cover;
+            }
+        }
+
+        >div {
+            @include breakpoints(md) {
+                max-width: 50%;
+            }
+
+            &.events {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 50px;
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    background-image: url('../../../../dist/image/back-prog.svg');
+                    background-position: 50% center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 200px;
+                    height: 85%;
+                    top: -10%;
+                    position: absolute;
+
+                    @include breakpoints(md) {
+                        left: 0;
+
+                    }
+                }
+
+
+                @include breakpoints(md) {
+                    width: 40%;
+                }
+
+                span {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+
+                    @include breakpoints(md) {
+                        grid-template-rows: 1fr;
+                        grid-template-columns: 200px 2fr;
+
+                    }
+
+                    width: 100%;
+                    gap: 20px;
+                    justify-items: center;
+                    align-items: center;
+
+                    .heure {
+                        grid-row: 1;
+                        color: $d-red;
+                        font-family: $secondary-font-family;
+                        font-size: 40px;
+
+                        @include breakpoints(lg) {
+                            font-size: 60px;
+                        }
+                    }
+
+                    .event {
+                        @include breakpoints(md) {
+                            grid-row: 1;
+
+                        }
+
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            &.resume {
+                width: 100%;
+
+                @include breakpoints(md) {
+                    width: 40%;
+                }
+
+                .text {
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    justify-items: center;
+                    align-items: center;
+
+                    p {
+                        margin-bottom: 10px;
+                    }
+
+                    &::after {
+                        content: '';
+                        background-image: url('../../../../dist/image/text-back.svg');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        width: 800px;
+                        aspect-ratio: 444/281;
+                        z-index: -1;
+                        grid-column: 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+.programme {
+    &::after {
+        content: "";
+        display: block;
+        width: 296px;
+        height: 544px;
+        background-image: url(../image/peloton.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        @include breakpoints(md) {
+            left: -100px;
+        }
+    }
+    figure {
+        margin: 0;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    .trace {
+        flex-direction: column;
+        @include breakpoints(md) {
+            flex-direction: row;
+        }
+        .wp-block-column:last-of-type {
+            max-width: 90%;
+        }
+    }
+    .evenement {
+        margin-bottom: 3rem;
+        @include breakpoints(md) {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            .heure p {
+               min-width: 110px;
+               text-align: center;
+               @include breakpoints(lg) {
+                min-width: 160px;
+               }
+            }
+        }
+        @include breakpoints(lg) {
+            margin-bottom: 4rem;
+        }
+    }
+    .evenements {
+        @include breakpoints(md) {
+            margin-top: 2rem;
+        }
+    }
+    .h2 {
+        text-align: left;
+        @include breakpoints(md) {
+            font-size: 40px;
+            width: 30%;
+        }
+        @include breakpoints(lg) {
+            font-size: 60px;
+        }
+    }
+    .heure {
+        @include breakpoints(lg) {
+            width: 15%;
+        }
+    }
+    .text-content {
+        @include breakpoints(lg) {
+            width: 40%;
+        }
+        .titre {
+            margin-bottom: .5rem;
+            p {
+                font-size: 1.5rem;
+            }
+        }
+        .description {
+            margin-bottom: 1rem;
+        }
+    }
+    .illustration {
+        @include breakpoints(lg) {
+            width: 35%;
+            overflow: hidden;
+            figure, img {
+                width: 100%;
+            }
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+}

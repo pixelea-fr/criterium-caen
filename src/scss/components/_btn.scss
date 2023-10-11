@@ -26,3 +26,16 @@ button,
         }
     }
 }
+
+.is-style-black-large-cta {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+}
+
+.wp-element-button,
+.wp-block-button__link {
+    background-color: transparent;
+    padding: 0;
+}
