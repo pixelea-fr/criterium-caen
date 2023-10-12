@@ -15,3 +15,48 @@
         height: 100%;
     }
 }
+
+.page-title {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 280px;
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 90%);
+    }
+    .clip-path-parent { // https://stackoverflow.com/questions/73703648/dotted-line-in-firefox-with-clip-path-poligon-rotate
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 2rem;
+        border-radius: 0.01px;
+        overflow: hidden;
+    }
+    .title-wrapper {
+        transform: rotate(3deg);
+        transform-origin: center center;
+        background-color: $grey;
+        clip-path: polygon(7% 0, 100% 8%, 96% 94%, 0% 100%);
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: 60px;
+        color: $white;
+        margin: 0;
+        padding-top: 30px;
+        padding-right: 60px;
+        padding-bottom: 30px;
+        padding-left: 70px;
+        transform: rotate(-3deg);
+    }
+}

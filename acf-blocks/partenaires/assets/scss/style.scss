@@ -1,0 +1,40 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+.partenaires-or,
+.partenaires-argent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    figure,
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.partenaires-or {
+    .partenaire-or {
+        width: 100%;
+        text-align: center;
+        @include breakpoints(sm) {
+            width: 50%;
+        }
+        @include breakpoints(md) {
+            width: 33%;
+        }
+    }
+}
+
+.partenaires-argent {
+    .partenaire-argent {
+        width: 50%;
+        text-align: center;
+        @include breakpoints(sm) {
+            width: 33%;
+        }
+        @include breakpoints(md) {
+            width: 24%;
+        }
+    }
+}
