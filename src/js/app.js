@@ -3,6 +3,7 @@
         // Burger nav
         $('.menu-toggle').on('click', function () {
             $('header').toggleClass('header--menu-is-open');
+            $('.main-navigation').toggleClass('menu-is-open');
         });
     });
 
@@ -18,7 +19,7 @@
         }
         if ($(this).scrollTop() > 1 * $(window).height()) {
             $(".back-top").css("bottom", "5%");
-        } 
+        }
         else {
             $(".back-top").css("bottom", "-100%");
         }

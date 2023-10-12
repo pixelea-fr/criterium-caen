@@ -13,12 +13,24 @@
         position: relative;
         .site-branding {
             max-height: 100%;
-            
+            width: 92%;
+            display: flex;
+            justify-content: center;
+            @include breakpoints(md) {
+                width: 30%;
+            }
+
             a,
             img {
                 display: flex;
                 max-height: 40px;
                 width: auto;
+            }
+        }
+        .main-navigation {
+            width: 8%;
+            @include breakpoints(md) {
+                width: 70%;
             }
         }
         &::after{
@@ -28,7 +40,11 @@
             height: 50px;
             width: 190px;
             background-repeat: no-repeat;
-            right: 0;
+            left: -100px;
+            @include breakpoints(md) {
+                left: initial;
+                right: 0;
+            }
         }
     }
 

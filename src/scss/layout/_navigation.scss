@@ -49,8 +49,12 @@
     display: flex;
     align-items: center;
     background-color: transparent;
+    height: 20px;
     border: none;
     line-height: 1;
+    @include breakpoints(md) {
+        display: none;
+    }
 
     &:hover {
         cursor: pointer;
@@ -61,7 +65,7 @@
     span::after {
         width: 1.125rem;
         border-radius: 0.125rem;
-        background-color: $black;
+        background-color: $d-red;
         transition: .5s cubic-bezier(.19, 1, .22, 1);
     }
 
@@ -103,11 +107,15 @@
     }
 }
 
-.menu-toggle {
-    display: none;
-}
+// .menu-toggle {
+//     display: none;
+// }
 
-.menu {
+div.menu {
+    display: none;
+    @include breakpoints(md) {
+        display: block;
+    }
     ul {
         margin-left: 4vw;
         display: flex;
@@ -127,6 +135,33 @@
 
             &:hover {
                 color: $d-red;
+            }
+        }
+    }
+}
+
+.main-navigation.menu-is-open {
+    .menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: $white;
+        > ul {
+            margin-left: 0;
+            padding: 2rem 0 1rem;
+            background-image: url(../image/peloton-menu.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+        }
+        li {
+            width: 100%;
+            text-align: center;
+            line-height: 2;
+            padding: .8rem 0;
+            a {
+                font-size: 1.2rem;
             }
         }
     }

@@ -1,5 +1,5 @@
-button,
-.button {
+button:not(.menu-toggle),
+.button:not(.menu-toggle) {
     font-family: $secondary-font-family;
     display: flex;
     text-transform: uppercase;
