@@ -1,0 +1,25 @@
+.single {
+    .entry-content {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        @include breakpoints(md) {
+            width: 60%;
+        }
+        h1 {
+            font-size: 60px;
+        }
+        figure,
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        figure {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+}

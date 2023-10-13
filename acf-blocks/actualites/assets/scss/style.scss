@@ -1,6 +1,6 @@
 @import '../../../../src/scss/abstracts/all.scss';
 
-// Call all variables 
+// Call all variables
 .actualites {
     background-image: url('../../../../dist/image/backactus.svg');
     background-size: contain;
@@ -14,11 +14,23 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 5%;
             position: relative;
+            &.long-list {
+                grid-template-rows: repeat(4, 1fr);
+                article {
+                    grid-row: auto;
+                }
+                @include breakpoints(md) {
+                    grid-template-rows: repeat(6, 1fr);
+                }
+            }
 
             @include breakpoints(md) {
                 gap: 60px;
                 grid-template-rows: repeat(3, 150px);
                 grid-template-columns: repeat(2, 50%);
+                &.long-list {
+                    grid-template-rows: repeat(6, 150px);
+                }
             }
 
             width: 100%;
@@ -120,7 +132,16 @@
                             }
                         }
                     }
-
+                    &:nth-child(5),
+                    &:nth-child(7),
+                    &:nth-child(9) {
+                        grid-column: 1;
+                    }
+                    &:nth-child(6),
+                    &:nth-child(8),
+                    &:nth-child(10) {
+                        grid-column: 2;
+                    }
                     .text {
                         background: linear-gradient(90deg, transparent 30%, $d-red 70%);
                         align-items: center;
