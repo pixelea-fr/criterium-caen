@@ -1,0 +1,28 @@
+.wpcf7-form {
+    width: 90%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    @include breakpoints(md) {
+        width: 60%;
+    }
+    @include breakpoints(lg) {
+        width: 50%;
+    }
+    input:not([type="submit"]),
+    textarea {
+        width: 100%;
+        border: 1px solid $grey;
+    }
+    input:not([type="submit"]) {
+        height: 40px;
+    }
+    .wpcf7-submit {
+        border: none;
+        background-color: $grey;
+        color: $white;
+        &:hover {
+            background-color: $d-red;
+        }
+    }
+}
